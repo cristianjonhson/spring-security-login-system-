@@ -8,9 +8,15 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfiguration {
 	
+	@SuppressWarnings("deprecation")
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		return http.
-				csrf(csrf -> csrf.disable()).authorizeRequests(auth -> auth.anyRequest().permitAll()).build();				
+		return http
+                .csrf(csrf -> csrf.disable())
+                .authorizeRequests(authorizeRequests ->
+                        authorizeRequests
+                                .anyRequest().permitAll()
+                )
+                .build();				
 	}
 }
