@@ -34,8 +34,7 @@ public class Rol implements GrantedAuthority {
 	}
 	
 	@Override
-	public String getAuthority() {
-		// TODO Auto-generated method stub
+	public String getAuthority() {	
 		return this.authority;
 	}
 
